@@ -1,0 +1,81 @@
+insert into users (name, phone, email, password, admin_status) values
+('Administrator', '+65 8123 4567', 'admin@mail.com', '$2a$10$W5kn6NXJvIfKBUHo7hlg9uRUdxmq67G5I73uR3QEIKHncTcELiCLy', true);
+insert into users (name, email, password) values
+('Phoebe Yong', 'phoebeykq@gmail.com', '$2a$10$9XkDhhdJoPdlRbBXXVR4FOIKv2VY8o9zfqyFGHfwDF6HkrpjgPw3W'),
+('Lye Yong Xin', 'yx@gmail.com', '$2a$10$nhwKeKyjJPawtsDzMGhN8e8ffczo4LbuqpYsGttupDBqeheXaovOC'),
+('Ong Xin Zhi', 'xong002@gmail.com', '$2a$10$Em67P98dliYhLN1egLQ0vOIu7SObptVk063cEtY2YIIXK3JgAXUru'),
+('Edison Zhuang', 'edison@skillsunion.com', '$2a$10$3hDlML8JIBb1iY5nc8grrOKKYYVXdPxkILwqLGsvHMXFxMxeN4Guy'),
+('Wong Chen Pang', 'cpwong@skillsunion.com', '$2a$10$aUUBTYgtMkGjnZbotZPGOetxj5lNuIZa1hjdcZUSgHKSV77uoTVtm'),
+('Terence Gaffud', 'terence.gaffud@skillsunion.com', '$2a$10$KHuOyMo8OznRrfcj90X9suwO6sgZ8cglXxLcFpJI5Wj9iuBrMEdMu'),
+('Daniel Goh', 'daniel@mail.com', '$2a$10$oNCNZYJhhIpIXFl4Zslbgeg9JvrwiOEAU0PlrGotil85DSAhNbizS'),
+('Jennifer Du', 'jennifer.du@ntu.edu.sg', '$2a$10$xlI9jWo8HSWMEdeHn1ey3e8hcJ1ub61JTDf06kVNAbPB6imoAQjGS'),
+('Jaedon Kwan', 'jaedon.kwan@ntu.edu.sg', '$2a$10$beQoNUDHjeIvHp99CMrHrOTuhViLV2YmPwmB74qEsnCYiBdIZPn0i');
+
+insert into concerts (artist, concert_date, concert_venue, tickets_available, ticket_price) values
+('WESTLIFE', '2023-02-16 20:00', 'Singapore Indoor Stadium', 100, 288.99),
+('BACKSTREET BOYS', '2023-02-22 20:00', 'Singapore Indoor Stadium', 100, 288.99),
+('PENTATONIX', '2023-03-06 20:00', 'The Star Theatre', 80, 188.99),
+('BLACKPINK', '2023-05-13 19:30', 'National Stadium', 120, 388.99),
+('NE-YO', '2023-05-22 20:00', 'The Star Theatre', 100, 288.99),
+('SHILA AMZAH', '2023-06-03 20:00', 'Capitol Theatre', 80, 188.99),
+('THE 1975', '2023-07-18 20:00', 'Capitol Theatre', 100, 288.99),
+('G.E.M.', '2023-08-12 19:00', 'Singapore Indoor Stadium', 90, 288.99),
+('MAYDAY', '2023-12-03 19:30', 'National Stadium', 100, 188.99),
+('JAY CHOU', '2023-12-17 20:00', 'National Stadium', 120, 388.99);
+
+insert into tickets (concert_id, seat_id, user_id, submission_status) values
+(3, 'B5', 2, true),
+(3, 'B6', 2, true),
+(8, 'A5', 3, true),
+(8, 'A6', 3, true),
+(4, 'A5', 2, true),
+(4, 'A6', 2, true),
+(9, 'A5', 3, true),
+(9, 'A6', 3, true),
+(7, 'B5', 4, true),
+(7, 'B6', 4, true),
+(7, 'A6', 8, true),
+(7, 'C5', 7, true),
+(10, 'A5', 10, true),
+(10, 'A6', 10, true),
+(10, 'A3', 9, true),
+(10, 'A4', 9, true),
+(10, 'A7', 6, true),
+(10, 'A8', 6, true),
+(10, 'B5', 5, true),
+(10, 'B6', 5, true),
+(10, 'B7', 5, true);
+
+insert into seats (seat_id, seat_category, venue_hall, ticket_price, concert_type) values
+('A1', 'A', 'Hall 1', 398, 'concert_type'),
+('A2', 'A', 'Hall 1', 398, 'concert_type'),
+('A3', 'A', 'Hall 1', 398, 'concert_type'),
+('A4', 'A', 'Hall 1', 398, 'concert_type'),
+('A5', 'A', 'Hall 1', 398, 'concert_type'),
+('A6', 'A', 'Hall 1', 398, 'concert_type'),
+('A7', 'A', 'Hall 1', 398, 'concert_type'),
+('A8', 'A', 'Hall 1', 398, 'concert_type'),
+('A9', 'A', 'Hall 1', 398, 'concert_type'),
+('A10', 'A', 'Hall 1', 398, 'concert_type'),
+
+('B1', 'B', 'Hall 1', 298, 'concert_type'),
+('B2', 'B', 'Hall 1', 298, 'concert_type'),
+('B3', 'B', 'Hall 1', 298, 'concert_type'),
+('B4', 'B', 'Hall 1', 298, 'concert_type'),
+('B5', 'B', 'Hall 1', 298, 'concert_type'),
+('B6', 'B', 'Hall 1', 298, 'concert_type'),
+('B7', 'B', 'Hall 1', 298, 'concert_type'),
+('B8', 'B', 'Hall 1', 298, 'concert_type'),
+('B9', 'B', 'Hall 1', 298, 'concert_type'),
+('B10', 'B', 'Hall 1', 298, 'concert_type'),
+
+('C1', 'C', 'Hall 1', 198, 'concert_type'),
+('C2', 'C', 'Hall 1', 198, 'concert_type'),
+('C3', 'C', 'Hall 1', 198, 'concert_type'),
+('C4', 'C', 'Hall 1', 198, 'concert_type'),
+('C5', 'C', 'Hall 1', 198, 'concert_type'),
+('C6', 'C', 'Hall 1', 198, 'concert_type'),
+('C7', 'C', 'Hall 1', 198, 'concert_type'),
+('C8', 'C', 'Hall 1', 198, 'concert_type'),
+('C9', 'C', 'Hall 1', 198, 'concert_type'),
+('C10', 'C', 'Hall 1', 198, 'concert_type');

@@ -1,14 +1,8 @@
 # DevOps Project
 
-[frontend repo](https://github.com/se-cohort1-group2/project-DevOps-frontend)
-[backend repo](https://github.com/se-cohort1-group2/project-DevOps-backend)
+• [Frontend Repository](https://github.com/se-cohort1-group2/project-DevOps-frontend)
 
-### ReactJS frontend
-
-```
-npm i
-npm start
-```
+• [Backend Repository](https://github.com/se-cohort1-group2/project-DevOps-backend)
 
 ### SpringBoot backend
 

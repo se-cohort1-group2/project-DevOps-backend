@@ -16,4 +16,3 @@ artifacts:
     - scripts/*.sh
     - appspec.yml
   discard-paths: yes
-

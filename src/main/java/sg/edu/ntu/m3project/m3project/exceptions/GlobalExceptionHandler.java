@@ -21,6 +21,12 @@ public class GlobalExceptionHandler {
                 .body(new ResponseMessage("Ticket not found."));
     }
 
+    @ExceptionHandler(ConcertNotFoundException.class)
+    public ResponseEntity<?> handleConcertNotFoundException(Exception ex) {
+        ex.printStackTrace();
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(new ResponseMessage(ex.getMessage()));
+    }
+
     @ExceptionHandler(HttpMessageConversionException.class)
     public ResponseEntity<?> handleHttpMessageConversionException(Exception ex) {
         ex.printStackTrace();

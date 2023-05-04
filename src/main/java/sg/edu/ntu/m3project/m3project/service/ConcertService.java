@@ -12,6 +12,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import sg.edu.ntu.m3project.m3project.entity.ConcertEntity;
+import sg.edu.ntu.m3project.m3project.exceptions.ConcertNotFoundException;
 import sg.edu.ntu.m3project.m3project.helper.ResponseMessage;
 import sg.edu.ntu.m3project.m3project.repository.ConcertRepository;
 import sg.edu.ntu.m3project.m3project.repository.UserRepository;
@@ -28,7 +29,7 @@ public class ConcertService {
     @Autowired
     UserService userService;
 
-    public ResponseEntity<?> find(String findBy, String searchParam) {
+    public List<ConcertEntity> find(String findBy, String searchParam) throws ConcertNotFoundException {
 
         List<ConcertEntity> currentConcertList;
 
@@ -60,22 +61,22 @@ public class ConcertService {
 
         if (currentConcertList.size() > 0) {
 
-            return ResponseEntity.ok().body(currentConcertList);
+            return currentConcertList;
         }
 
-        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(new ResponseMessage("No upcoming concerts"));
+        throw new ConcertNotFoundException("No upcoming concerts");
     }
 
-    public ResponseEntity<?> findbyConcertId(int concertId) {
+    public ConcertEntity findbyConcertId(int concertId) {
 
         Optional<ConcertEntity> optionalConcert = concertRepo.findById(concertId);
 
         if (optionalConcert.isPresent()) {
-            ConcertEntity selectedConcert = optionalConcert.get();
-            return new ResponseEntity<ConcertEntity>(selectedConcert, HttpStatus.OK);
+            return optionalConcert.get();
         }
 
-        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(new ResponseMessage("Invalid concert id."));
+        throw new ConcertNotFoundException("Invalid concert id.");
+
     }
 
     public ResponseEntity<?> create(String token, int userId, ConcertEntity concert) {

@@ -10,6 +10,11 @@ phases:
   post_build:
     commands:
       - echo Build completed
+      - echo Running tests for surefire junit
+      - mvn test -f surefire/pom.xml -fn
+      - echo
+      - echo Running tests for cucumber with json plugin
+      - mvn test -Dcucumber.options="--plugin json:target/cucumber-json-report.json" -f cucumber-json/pom.xml -fn
 artifacts:
   files:
     - target/*.jar

@@ -46,11 +46,6 @@ public class ConcertControllerTest {
     @Test
     public void givenDataExist_whenFetchAll_thenReturnOk() throws Exception {
 
-        // mock repo layer
-        List<ConcertEntity> currentConcertList = (List<ConcertEntity>) mockRepo.findAll();
-        when(mockRepo.findAll()).thenReturn(currentConcertList);
-
-        // call the method
         this.mockMvc.perform(get("/concerts")).andDo(print()).andExpect(status().isOk());
     }
 

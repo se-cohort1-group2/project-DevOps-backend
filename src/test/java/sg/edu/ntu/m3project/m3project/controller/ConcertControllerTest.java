@@ -46,7 +46,7 @@ public class ConcertControllerTest {
     @Test
     public void givenDataExist_whenFetchAll_thenReturnOk() throws Exception {
 
-        this.mockMvc.perform(get("/concerts")).andDo(print()).andExpect(status().isNotFound());
+        this.mockMvc.perform(get("/concerts")).andDo(print()).andExpect(status().isOk());
     }
 
 }

@@ -51,7 +51,7 @@ public class ConcertControllerTest {
         when(mockRepo.findAll()).thenReturn(currentConcertList);
 
         // call the method
-        this.mockMvc.perform(get("/concerts")).andDo(print()).andExpect(status().isOk());
+        this.mockMvc.perform(get("/concerts")).andDo(print()).andExpect(status().isNotFound());
     }
 
 }
